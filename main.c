@@ -6,18 +6,11 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:14:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/03/11 19:34:32 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:39:42 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include <stdio.h>
-
-//check se só tem numeros, mas ver ser tem + ou -
-//check se tem mais de 11 caract
-//transformar em inteiro
-//creact_stacks, pilha para colocar os inteiros
-//atol para passar o maior inteiro printável, uma vez que vai ser uma atoi com long
 
 int	check_int(char *arg)
 {
@@ -53,11 +46,8 @@ int repeat_number(int argc, char **argv)
 		i = j + 1;
 		while (i < argc)
 		{
-			if (ft_atol(argv[j]) == ft_atol(argv[i]))
-			{
-				printf("1"); 
+			if (ft_atol(argv[j]) == ft_atol(argv[i])) 
 				return (1);
-			}
 			i++;
 		}
 		j++;
