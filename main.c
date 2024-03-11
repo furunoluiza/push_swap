@@ -6,11 +6,12 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:14:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/03/11 13:15:15 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/03/11 19:34:32 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 //check se só tem numeros, mas ver ser tem + ou -
 //check se tem mais de 11 caract
@@ -40,23 +41,39 @@ int	check_long(char *str)
 		return (0);
 }
 
-int repeat_number(int arg, long *array)
+int repeat_number(int argc, char **argv)
 {
-	//Comparar o valor com todos os outros, talvez são dois loops
 	int	i;
 	int	j;
 
 	i = 0;
 	j = 1;
-	while (i < arg - 1)
+	while (j < argc)
 	{
-		j = i + 1;
-		while (j < arg - 1)
+		i = j + 1;
+		while (i < argc)
 		{
-			if (array[i] == array [j])
+			if (ft_atol(argv[j]) == ft_atol(argv[i]))
+			{
+				printf("1"); 
 				return (1);
-			j++;
+			}
+			i++;
 		}
+		j++;
+	}
+	return (0);
+}
+
+int check_error(int argc, char **argv)
+{
+	int i;
+	
+	i = 1;
+	while (i < argc)
+	{
+		if (!check_int(argv[i]) || !check_long(argv[i]))
+			return (1);
 		i++;
 	}
 	return (0);
@@ -64,29 +81,9 @@ int repeat_number(int arg, long *array)
 
 int	main(int argc, char **argv)
 {
-	int	i;
-	int	j;
-	long *array;
-
-	i = 1;
-	j = 0;
 	if (argc >= 2)
 	{
-		array = malloc(sizeof(long) * (argc - 1));
-		if (!array)
-			return (0);
-		while (i < argc)
-		{
-			if (!(check_int(argv[i]) && check_long(argv[i])))
-			{
-				ft_putstr_fd("Error", 1);
-				return (0);
-			}
-			array[j] = ft_atol(argv[i]);
-			j++;
-			i++;
-		}
-		if (repeat_number(argc, array) == 1)
+		if (check_error(argc, argv) || repeat_number(argc, argv))
 		{
 			ft_putstr_fd("Error", 1);
 			return (0);
