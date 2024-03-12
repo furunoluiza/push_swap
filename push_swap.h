@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "libft/libft.h"
+# include <stdio.h>
 
 typedef struct	s_list
 {
@@ -26,8 +27,8 @@ typedef struct	s_list
 int check_int(char *arg);
 int check_error(int argc, char **argv);
 int repeat_number(int argc, char **argv);
-void    fill_list(int argc, char **argv, t_list *stack_a);
-void  	push_tail(t_list **stack_top, int argv);
+t_list    *fill_list(int argc, char **argv);
 void    push_top(t_list **stack_top, int argv);
+void	free_stack(t_list *stack_a);
 
 #endif

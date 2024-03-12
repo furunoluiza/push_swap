@@ -81,7 +81,15 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error", 1);
 			return (0);
 		}
-		fill_list(argc, argv, stack_a);
+		stack_a = fill_list(argc, argv);
+		/*while (stack_a != NULL)
+		{
+			printf("%d\n", stack_a->value);
+			stack_a = stack_a->next;
+
+		}*/
+		//colocar para ler em outra função
+		free_stack(stack_a);
 	}
 	return (0);
 }

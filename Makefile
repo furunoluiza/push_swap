@@ -1,7 +1,7 @@
 NAME = push_swap
 SRC = main.c stack.c
 OBJ = $(SRC:.c=.o)
-CC = cc
+CC = cc -g
 RM = rm -rf
 ARC = ar -rcs
 CFLAGS = -Wall -Wextra -Werror

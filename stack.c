@@ -18,36 +18,36 @@ void	push_top(t_list **stack_top, int argv) //função para add um nó no topo d
 
 	node = malloc(sizeof(t_list));
 	node->value = argv;
-	node->index = -1;
 	node->next = *stack_top;
 	*stack_top = node;
 }
 
-void	push_tail(t_list **stack_top, int argv)
+void	free_stack(t_list *stack_a)
 {
-	t_list	*node;
 	t_list	*temp;
-
-	node = malloc(sizeof(t_list));
-	node->value = argv;
-	node->index = -1;
-	node->next = NULL;
-	if (*stack_top == NULL || stack_top == NULL)
+	while (stack_a)
 	{
-		*stack_top = node;
-		return; 
+		temp = stack_a;
+		stack_a = stack_a->next;
+		free(temp);
 	}
-	temp = *stack_top;
-	while (temp->next != NULL)
-		temp = temp->next;
-	temp->next = node;
+	/*while (stack_b)
+	{
+		temp = stack_b;
+		stack_b = stack_b->next;
+		free(temp);
+	}*/
 }
 
-void	fill_list(int argc, char **argv, t_list	*stack_a)
+t_list	*fill_list(int argc, char **argv)
 {
-	int		i;
+	t_list	*stack_a;
 
-	i = 1;
-	while (argc-- > 1)
-		push_tail(&stack_a, ft_atol(argv[i++]));
+	stack_a = NULL;
+	while (--argc > 0)
+	{
+		printf("entrou\n");
+		push_top(&stack_a, ft_atol(argv[argc]));
+	}
+	return (stack_a);
 }
