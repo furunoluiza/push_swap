@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/07 18:03:34 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/03/07 18:04:55 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/03/12 13:40:23 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include "libft/libft.h"
 
-//funções que eu uso na minha main, mas estão em outro arquivo
+/* push_swap functions */
+int check_int(char *arg;
+int check_int(char *arg);
+int check_error(int argc, char **argv);
+int repeat_number(int argc, char **argv);
 
 #endif
