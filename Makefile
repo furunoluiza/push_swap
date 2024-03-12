@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = main.c
+SRC = main.c stack.c
 OBJ = $(SRC:.c=.o)
 CC = cc
 RM = rm -rf

@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:14:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/03/11 19:39:42 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/03/12 17:03:04 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,9 @@ int check_error(int argc, char **argv)
 
 int	main(int argc, char **argv)
 {
+	t_list	*stack_a;
+
+	stack_a = NULL;
 	if (argc >= 2)
 	{
 		if (check_error(argc, argv) || repeat_number(argc, argv))
@@ -78,6 +81,7 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error", 1);
 			return (0);
 		}
+		fill_list(argc, argv, stack_a);
 	}
 	return (0);
 }
