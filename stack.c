@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	push_top(t_list **stack_top, int argv) //função para add um nó no topo da pilha
+void	add_node_top(t_list **stack_top, int argv) //função para add um nó no topo da pilha
 {
 	t_list	*node;
 
@@ -39,15 +39,21 @@ void	free_stack(t_list *stack_a)
 	}*/
 }
 
+void	print_stacks(t_list *stack_a)
+{
+	while (stack_a != NULL)
+		{
+			printf("%d\n", stack_a->value);
+			stack_a = stack_a->next;
+		}
+}
+
 t_list	*fill_list(int argc, char **argv)
 {
 	t_list	*stack_a;
 
 	stack_a = NULL;
 	while (--argc > 0)
-	{
-		printf("entrou\n");
-		push_top(&stack_a, ft_atol(argv[argc]));
-	}
+		add_node_top(&stack_a, ft_atol(argv[argc]));
 	return (stack_a);
 }

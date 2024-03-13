@@ -27,8 +27,9 @@ typedef struct	s_list
 int check_int(char *arg);
 int check_error(int argc, char **argv);
 int repeat_number(int argc, char **argv);
-t_list    *fill_list(int argc, char **argv);
-void    push_top(t_list **stack_top, int argv);
+void    add_node_top(t_list **stack_top, int argv);
 void	free_stack(t_list *stack_a);
+void	print_stacks(t_list *stack_a);
+t_list    *fill_list(int argc, char **argv);
 
 #endif

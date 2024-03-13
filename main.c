@@ -82,13 +82,7 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		stack_a = fill_list(argc, argv);
-		/*while (stack_a != NULL)
-		{
-			printf("%d\n", stack_a->value);
-			stack_a = stack_a->next;
-
-		}*/
-		//colocar para ler em outra função
+		print_stacks(stack_a);
 		free_stack(stack_a);
 	}
 	return (0);
