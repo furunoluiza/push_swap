@@ -37,6 +37,7 @@ int	check_long(char *str)
 int repeat_number(int argc, char **argv)
 {
 	int	i;
+
 	int	j;
 
 	i = 0;
@@ -84,7 +85,7 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		stack_a = fill_list(argc, argv);
-		reverse_a(&stack_a);
+		sort_elements(argc - 1, stack_a);
 		print_stack(stack_a);
 		//print_stack(stack_b);
 		free_stack(stack_a, stack_b);
