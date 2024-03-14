@@ -17,7 +17,7 @@ void    rotate_stack(t_list **stack)
     t_list  *head;
     t_list  *tail;
 
-    if (*stack == NULL || *stack->next == NULL)
+    if (*stack == NULL || (*stack)->next == NULL)
         return;
     head = *stack;
     tail = *stack;
@@ -30,19 +30,19 @@ void    rotate_stack(t_list **stack)
 
 void    rotate_a(t_list **stack_a)
 {
-    rotate_stack(*stack_a);
-    fd_putstr_fd("ra", 1);
+    rotate_stack(stack_a);
+    ft_putstr_fd("ra\n", 1);
 }
 
 void    rotate_b(t_list **stack_b)
 {
-    rotate_stack(*stack_b);
-    fd_putstr_fd("rb", 1);
+    rotate_stack(stack_b);
+    ft_putstr_fd("rb\n", 1);
 }
 
 void    rotate_ab(t_list **stack_a, t_list **stack_b)
 {
-    rotate_stack(*stack_a);
-    rotate_stack(*stack_b);
-    fd_putstr_fd("rr", 1);
+    rotate_stack(stack_a);
+    rotate_stack(stack_b);
+    ft_putstr_fd("rr\n", 1);
 }

@@ -28,16 +28,18 @@ int check_int(char *arg);
 int check_error(int argc, char **argv);
 int repeat_number(int argc, char **argv);
 void    add_node_top(t_list **stack_top, int argv);
-void	free_stack(t_list *stack_a);
-void	print_stacks(t_list *stack_a);
+void	free_stack(t_list *stack_a, t_list *stack_b);
+void	print_stack(t_list *stack);
 t_list    *fill_list(int argc, char **argv);
 
 /* operations functions */
+void    ft_swap(t_list **stack);
 void    swap_a(t_list **stack_a);
 void    swap_b(t_list **stack_b);
-void    swaps(t_list **stack_a, t_list **stack_b);
+void    swap_ab(t_list **stack_a, t_list **stack_b);
+void    ft_push(t_list **stack_a, t_list **stack_b);
 void    push_a(t_list **stack_a, t_list **stack_b);
-void    push_b(t_list **stack_a, t_list stack **b);
+void    push_b(t_list **stack_a, t_list **stack_b);
 void    rotate_stack(t_list **stack);
 void    rotate_a(t_list **stack_a);
 void    rotate_b(t_list **stack_b);

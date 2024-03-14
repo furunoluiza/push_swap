@@ -72,8 +72,10 @@ int check_error(int argc, char **argv)
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
+	t_list	*stack_b;
 
 	stack_a = NULL;
+	stack_b = NULL;
 	if (argc >= 2)
 	{
 		if (check_error(argc, argv) || repeat_number(argc, argv))
@@ -82,8 +84,10 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		stack_a = fill_list(argc, argv);
-		print_stacks(stack_a);
-		free_stack(stack_a);
+		reverse_a(&stack_a);
+		print_stack(stack_a);
+		//print_stack(stack_b);
+		free_stack(stack_a, stack_b);
 	}
 	return (0);
 }

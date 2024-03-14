@@ -22,7 +22,7 @@ void	add_node_top(t_list **stack_top, int argv) //função para add um nó no to
 	*stack_top = node;
 }
 
-void	free_stack(t_list *stack_a)
+void	free_stack(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*temp;
 	while (stack_a)
@@ -31,21 +31,22 @@ void	free_stack(t_list *stack_a)
 		stack_a = stack_a->next;
 		free(temp);
 	}
-	/*while (stack_b)
+	while (stack_b)
 	{
 		temp = stack_b;
 		stack_b = stack_b->next;
 		free(temp);
-	}*/
+	}
 }
 
-void	print_stacks(t_list *stack_a)
+void	print_stack(t_list *stack)
 {
-	while (stack_a != NULL)
-		{
-			printf("%d\n", stack_a->value);
-			stack_a = stack_a->next;
-		}
+	printf("Começa a printar a stack:\n");
+	while (stack != NULL)
+	{
+		printf("%d\n", stack->value);
+		stack = stack->next;
+	}
 }
 //printar a stack_b se tiver coisa nela
 //fazer uma função de verificação, para saber se está ordenado

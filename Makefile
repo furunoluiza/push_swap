@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = main.c stack.c
+SRC = main.c stack.c swap.c push.c rotate.c reverse.c
 OBJ = $(SRC:.c=.o)
 CC = cc -g
 RM = rm -rf

@@ -18,7 +18,7 @@ void    reverse_stack(t_list **stack)
     t_list  *tail;
     t_list  *prev;
 
-    if (*stack == NULL || *stack->next == NULL)
+    if (*stack == NULL || (*stack)->next == NULL)
         return;
     head = *stack;
     tail = *stack;
@@ -34,19 +34,19 @@ void    reverse_stack(t_list **stack)
 
 void    reverse_a(t_list **stack_a)
 {
-    reverse_stack(*stack_a);
-    fd_putstr_fd("rra", 1);
+    reverse_stack(stack_a);
+    ft_putstr_fd("rra\n", 1);
 }
 
 void    reverse_b(t_list **stack_b)
 {
-    reverse_stack(*stack_b);
-    fd_putstr_fd("rrb", 1);
+    reverse_stack(stack_b);
+    ft_putstr_fd("rrb\n", 1);
 }
 
 void    reverse_ab(t_list **stack_a, t_list **stack_b)
 {
-    reverse_stack(*stack_a);
-    reverse_stack(*stack_b);
-    fd_putstr_fd("rrr", 1);
+    reverse_stack(stack_a);
+    reverse_stack(stack_b);
+    ft_putstr_fd("rrr\n", 1);
 }
