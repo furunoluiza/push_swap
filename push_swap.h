@@ -32,4 +32,19 @@ void	free_stack(t_list *stack_a);
 void	print_stacks(t_list *stack_a);
 t_list    *fill_list(int argc, char **argv);
 
+/* operations functions */
+void    swap_a(t_list **stack_a);
+void    swap_b(t_list **stack_b);
+void    swaps(t_list **stack_a, t_list **stack_b);
+void    push_a(t_list **stack_a, t_list **stack_b);
+void    push_b(t_list **stack_a, t_list stack **b);
+void    rotate_stack(t_list **stack);
+void    rotate_a(t_list **stack_a);
+void    rotate_b(t_list **stack_b);
+void    rotate_ab(t_list **stack_a, t_list **stack_b);
+void    reverse_stack(t_list **stack);
+void    reverse_a(t_list **stack_a);
+void    reverse_b(t_list **stack_b);
+void    reverse_ab(t_list **stack_a, t_list **stack_b);
+
 #endif

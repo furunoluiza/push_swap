@@ -47,6 +47,8 @@ void	print_stacks(t_list *stack_a)
 			stack_a = stack_a->next;
 		}
 }
+//printar a stack_b se tiver coisa nela
+//fazer uma função de verificação, para saber se está ordenado
 
 t_list	*fill_list(int argc, char **argv)
 {
