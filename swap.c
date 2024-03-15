@@ -14,14 +14,15 @@
 
 void    ft_swap(t_list **stack)
 {
+    int     x;
     t_list  *temp;
 
     if (*stack == NULL || (*stack)->next == NULL)
         return;
-    temp = (*stack)->next;
-    (*stack)->next = temp->next;
-    temp->next = *stack;
-    *stack = temp;
+    x = (*stack)->value;
+    temp = *stack;
+    (*stack)->value = temp->next->value;
+    (*stack)->next->value = x;
 }
 
 void    swap_a(t_list **stack_a)

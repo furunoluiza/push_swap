@@ -85,8 +85,7 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		stack_a = fill_list(argc, argv);
-		check_order(stack_a);
-			//sort_elements(argc - 1, stack_a);
+		sort_elements(stack_a);
 		print_stack(stack_a);
 		//print_stack(stack_b);
 		free_stack(stack_a, stack_b);

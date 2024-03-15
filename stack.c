@@ -49,23 +49,6 @@ void	print_stack(t_list *stack)
 	}
 }
 
-int	check_order(t_list *stack)
-{
-
-	while (stack->next != NULL)
-	{
-		if (stack->value < stack->next->value)
-			stack = stack->next;
-		else
-		{
-			printf("Sem ordem\n");
-			return (0);
-		}
-	}
-	printf("Ordenado\n");
-	return (1);
-}
-
 t_list	*fill_list(int argc, char **argv)
 {
 	t_list	*stack_a;

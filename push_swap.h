@@ -27,16 +27,15 @@ typedef struct	s_list
 int check_int(char *arg);
 int check_error(int argc, char **argv);
 int repeat_number(int argc, char **argv);
-int	check_order(t_list *stack_a);
+int	check_order(t_list *stack);
+int	stack_size(t_list *stack);
 void    add_node_top(t_list **stack_top, int argv);
 void	free_stack(t_list *stack_a, t_list *stack_b);
 void	print_stack(t_list *stack);
 t_list    *fill_list(int argc, char **argv);
 
 /* operations functions */
-//int	cmp(int	a, int	b);
-//void    sort_two(t_list *stack);
-//void    sort_elements(int argc, t_list *stack);
+void    sort_elements(t_list *stack);
 
 void    ft_swap(t_list **stack);
 void    swap_a(t_list **stack_a);
