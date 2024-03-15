@@ -49,8 +49,22 @@ void	print_stack(t_list *stack)
 	}
 }
 
-//fazer uma função de verificação, para saber se está ordenado
-//algoritmo para 2 elementos e para 3 
+int	check_order(t_list *stack)
+{
+
+	while (stack->next != NULL)
+	{
+		if (stack->value < stack->next->value)
+			stack = stack->next;
+		else
+		{
+			printf("Sem ordem\n");
+			return (0);
+		}
+	}
+	printf("Ordenado\n");
+	return (1);
+}
 
 t_list	*fill_list(int argc, char **argv)
 {
