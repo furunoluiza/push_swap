@@ -35,7 +35,7 @@ void	print_stack(t_list *stack);
 t_list    *fill_list(int argc, char **argv);
 
 /* operations functions */
-void    sort_elements(t_list **stack);
+void    sort_elements(t_list **stack_a, t_list **stack_b);
 
 void    ft_swap(t_list **stack);
 void    swap_a(t_list **stack_a);

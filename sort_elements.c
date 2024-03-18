@@ -44,8 +44,33 @@ static void    three_elements(t_list **stack_a)
 //implementar a ordem comparando o primeiro e o terceiro
 //quando chama a função no mesmo arq coloca static e n precisa colocar no .h
 //manda um numero pra b(pensar no numero que vou mandar) - tem que ser o menor numero
+static t_list *smaller_number(t_list **stack_a)
+{
+    t_list  *smaller;
 
-void    sort_elements(t_list **stack_a)
+    smaller = *stack_a;
+    while ((*stack_a)->next != NULL)
+    {
+        if (smaller->value > (*stack_a)->next->value)
+            smaller = (*stack_a)->next;
+        *stack_a = (*stack_a)->next;
+    }
+    return (smaller);
+}
+
+static void four_elements(t_list **stack_a, t_list **stack_b)
+{
+    t_list  *smaller;
+
+    smaller = smaller_number(stack_a);
+    smaller->next = *stack_b;
+    *stack_b = smaller;
+    three_elements(stack_a);
+    (*stack_b)->next = *stack_a;
+    *stack_a = *stack_b;
+}
+//Eu tirei o menor elemento da stack, mas ignorei totalmente onde ele estaria dentro da minha stack
+void    sort_elements(t_list **stack_a, t_list **stack_b)
 {
     int size;
 
@@ -57,5 +82,7 @@ void    sort_elements(t_list **stack_a)
             swap_a(stack_a);
         else if (size == 3)
             three_elements(stack_a);
+        else if (size == 4)
+            four_elements(stack_a, stack_b);
     }
 }

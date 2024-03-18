@@ -85,10 +85,13 @@ int	main(int argc, char **argv)
 			return (0);
 		}
 		stack_a = fill_list(argc, argv);
+		printf("Essa é a stack_a\n");
 		print_stack(stack_a);
-		sort_elements(&stack_a);
+		sort_elements(&stack_a, &stack_b);
+		printf("Essa é a stack_a\n");
 		print_stack(stack_a);
-		//print_stack(stack_b);
+		printf("Essa é a stack_b\n");
+		print_stack(stack_b);
 		free_stack(stack_a, stack_b);
 	}
 	return (0);
