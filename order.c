@@ -14,7 +14,6 @@
 
 int	check_order(t_list *stack)
 {
-
 	while (stack->next != NULL)
 	{
 		if (stack->value < stack->next->value)

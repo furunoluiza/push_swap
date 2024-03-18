@@ -12,43 +12,48 @@
 
 #include "push_swap.h"
 
-void    three_elements(t_list *stack_a)
+static void    three_elements(t_list **stack_a)
 {
     int first;
     int sec;
     int third;
 
-    first = stack_a->value;
-    sec = stack_a->next->value;
-    third = stack_a->next->next->value;
-    if (first < sec && sec > third) //1 2 3
+    first = (*stack_a)->value;
+    sec = (*stack_a)->next->value;
+    third = (*stack_a)->next->next->value;
+    if (first < sec && sec > third && first < third) //1 3 2
     {
-        swap_a(&stack_a);
-        rotate_a(&stack_a);
+        swap_a(stack_a);
+        rotate_a(stack_a);
     }
-    else if (first > sec && sec < third) //2 1 3
-        swap_a(&stack_a);
-    else if (first < sec && sec > third) //2 3 1
-        reverse_a(&stack_a);
-    else if (first > sec && sec < third) //3 1 2
+    else if (first > sec && sec < third && first < third) //2 1 3
+        swap_a(stack_a);
+    else if (first < sec && sec > third && first > third) //2 3 1
+        reverse_a(stack_a);
+    else if (first > sec && sec < third && first > third) //3 1 2
     {
-        rotate_a(&stack_a);
-        swap_a(&stack_a);
+        rotate_a(stack_a);
+        swap_a(stack_a);
     }
-    else if (first > sec && sec > third) //3 2 1
-        reverse_a(&stack_a);
+    else if (first > sec && sec > third && first > third) //3 2 1
+    {
+        swap_a(stack_a);
+        reverse_a(stack_a);
+    }
 }
+//implementar a ordem comparando o primeiro e o terceiro
+//quando chama a função no mesmo arq coloca static e n precisa colocar no .h
 
-void    sort_elements(t_list *stack_a)
+void    sort_elements(t_list **stack_a)
 {
     int size;
 
-    size = stack_size(stack_a);
+    size = stack_size(*stack_a);
 
-    while (!check_order(stack_a))
+    while (!check_order(*stack_a))
     {
         if (size == 2)
-            swap_a(&stack_a);
+            swap_a(stack_a);
         else if (size == 3)
             three_elements(stack_a);
     }

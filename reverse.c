@@ -14,21 +14,20 @@
 
 void    reverse_stack(t_list **stack)
 {
-    t_list  *head;
     t_list  *tail;
     t_list  *prev;
 
     if (*stack == NULL || (*stack)->next == NULL)
         return;
-    head = *stack;
     tail = *stack;
+    prev = NULL;
     while (tail->next != NULL)
     {
         prev = tail;
         tail = tail->next;
     }
+    tail->next = *stack;
     prev->next = NULL;
-    tail->next = head;
     *stack = tail;
 }
 
