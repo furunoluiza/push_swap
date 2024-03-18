@@ -43,6 +43,7 @@ static void    three_elements(t_list **stack_a)
 }
 //implementar a ordem comparando o primeiro e o terceiro
 //quando chama a função no mesmo arq coloca static e n precisa colocar no .h
+//manda um numero pra b(pensar no numero que vou mandar) - tem que ser o menor numero
 
 void    sort_elements(t_list **stack_a)
 {
