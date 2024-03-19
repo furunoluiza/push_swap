@@ -49,6 +49,20 @@ void	print_stack(t_list *stack)
 	}
 }
 
+void	index_stack(t_list *stack)
+{
+ 	int	i;
+
+ 	i = 0;
+ 	while ((*stack)->next != NULL)
+ 	{
+ 		(*stack)->index = i;
+ 		i++;
+ 		*stack = *stack->next;
+ 	}
+ }
+//tem que indexar já sabendo qual vai ser o menor e o maior
+
 t_list	*fill_list(int argc, char **argv)
 {
 	t_list	*stack_a;

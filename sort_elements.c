@@ -41,9 +41,10 @@ static void    three_elements(t_list **stack_a)
         reverse_a(stack_a);
     }
 }
-//implementar a ordem comparando o primeiro e o terceiro
+
 //quando chama a função no mesmo arq coloca static e n precisa colocar no .h
 //manda um numero pra b(pensar no numero que vou mandar) - tem que ser o menor numero
+
 static t_list *smaller_number(t_list **stack_a)
 {
     t_list  *smaller;
@@ -61,14 +62,18 @@ static t_list *smaller_number(t_list **stack_a)
 static void four_elements(t_list **stack_a, t_list **stack_b)
 {
     t_list  *smaller;
-
+    t_list  *head;
+    (void)stack_b;
+    head = *stack_a;
     smaller = smaller_number(stack_a);
-    smaller->next = *stack_b;
-    *stack_b = smaller;
+    while (smaller->index == 0)
+        rotate_a(stack_a);    
+    push_b(stack_a, stack_b);
     three_elements(stack_a);
-    (*stack_b)->next = *stack_a;
-    *stack_a = *stack_b;
+    push_a(stack_a, stack_b);
 }
+
+//como vou indexar? função para indexar a stack?
 //Eu tirei o menor elemento da stack, mas ignorei totalmente onde ele estaria dentro da minha stack
 void    sort_elements(t_list **stack_a, t_list **stack_b)
 {
