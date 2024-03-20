@@ -80,6 +80,31 @@ static void four_elements(t_list **stack_a, t_list **stack_b)
 }
 
 //como vou indexar? função para indexar a stack?
+static void five_elements(t_list **stack_a, t_list **stack_b)
+{
+    int smaller;
+    t_list  *head;
+
+    head = *stack_a;
+    smaller = smaller_number(&head);
+    if ((*stack_a)->next->value == smaller)
+        swap_a(stack_a);
+    else if ((*stack_a)->next->next->value == smaller)
+    {
+        rotate_a(stack_a);
+        rotate_a(stack_a);
+    }
+    else if ((*stack_a)->next->next->next->value == smaller)
+    {
+        reverse_a(stack_a);
+        reverse_a(stack_a);
+    }
+    else if ((*stack_a)->next->next->next->next->value == smaller)
+        reverse_a(stack_a);
+    push_b(stack_a, stack_b);
+    four_elements(stack_a, stack_b);
+    push_a(stack_a, stack_b);
+}
 
 void    sort_elements(t_list **stack_a, t_list **stack_b)
 {
@@ -95,6 +120,7 @@ void    sort_elements(t_list **stack_a, t_list **stack_b)
             three_elements(stack_a);
         else if (size == 4)
             four_elements(stack_a, stack_b);
-
+        else if (size == 5)
+            five_elements(stack_a, stack_b);
     }
 }
