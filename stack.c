@@ -34,7 +34,7 @@ void	free_stack(t_list *stack_a, t_list *stack_b)
 	while (stack_b)
 	{
 		temp = stack_b;
-		stack_b = stack_b->next;write(1, "ola", 3);
+		stack_b = stack_b->next;
 		free(temp);
 	}
 }
