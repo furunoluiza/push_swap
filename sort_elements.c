@@ -46,16 +46,21 @@ static void    three_elements(t_list **stack_a)
 
 static int smaller_number(t_list **stack_a)
 {
+    int i;
     int smaller;
 
+    i = 0;
     smaller = (*stack_a)->value;
     while ((*stack_a)->next != NULL)
     {
         if (smaller > (*stack_a)->next->value)
             smaller = (*stack_a)->next->value;
         *stack_a = (*stack_a)->next;
+        i++;
     }
-    return (smaller);
+    printf("%d")
+    //quero mudar minha função para retornar a posição!!
+    return (i);
 }
 
 static void four_elements(t_list **stack_a, t_list **stack_b)
