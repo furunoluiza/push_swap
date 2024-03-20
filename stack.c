@@ -34,7 +34,7 @@ void	free_stack(t_list *stack_a, t_list *stack_b)
 	while (stack_b)
 	{
 		temp = stack_b;
-		stack_b = stack_b->next;
+		stack_b = stack_b->next;write(1, "ola", 3);
 		free(temp);
 	}
 }
@@ -48,20 +48,6 @@ void	print_stack(t_list *stack)
 		stack = stack->next;
 	}
 }
-
-void	index_stack(t_list *stack)
-{
- 	int	i;
-
- 	i = 0;
- 	while ((*stack)->next != NULL)
- 	{
- 		(*stack)->index = i;
- 		i++;
- 		*stack = *stack->next;
- 	}
- }
-//tem que indexar já sabendo qual vai ser o menor e o maior
 
 t_list	*fill_list(int argc, char **argv)
 {

@@ -45,15 +45,15 @@ static void    three_elements(t_list **stack_a)
 //quando chama a função no mesmo arq coloca static e n precisa colocar no .h
 //manda um numero pra b(pensar no numero que vou mandar) - tem que ser o menor numero
 
-static t_list *smaller_number(t_list **stack_a)
+int smaller_number(t_list **stack_a)
 {
-    t_list  *smaller;
+    int smaller;
 
-    smaller = *stack_a;
+    smaller = (*stack_a)->value;
     while ((*stack_a)->next != NULL)
     {
-        if (smaller->value > (*stack_a)->next->value)
-            smaller = (*stack_a)->next;
+        if (smaller > (*stack_a)->next->value)
+            smaller = (*stack_a)->next->value;
         *stack_a = (*stack_a)->next;
     }
     return (smaller);
@@ -61,13 +61,21 @@ static t_list *smaller_number(t_list **stack_a)
 
 static void four_elements(t_list **stack_a, t_list **stack_b)
 {
-    t_list  *smaller;
-    t_list  *head;
-    (void)stack_b;
-    head = *stack_a;
+    int smaller;
+    //t_list  *head;
+
+    //head = *stack_a;
     smaller = smaller_number(stack_a);
-    while (smaller->index == 0)
-        rotate_a(stack_a);    
+    printf ("Small: %d", smaller);
+    if ((*stack_a)->next->value == smaller)
+        swap_a(stack_a);
+    else if ((*stack_a)->next->next->value == smaller)
+    {
+        reverse_a(stack_a);
+        reverse_a(stack_a);
+    }
+    else if ((*stack_a)->next->next->next->value == smaller)
+        reverse_a(stack_a);
     push_b(stack_a, stack_b);
     three_elements(stack_a);
     push_a(stack_a, stack_b);
@@ -88,6 +96,9 @@ void    sort_elements(t_list **stack_a, t_list **stack_b)
         else if (size == 3)
             three_elements(stack_a);
         else if (size == 4)
+        {
+            printf("aqui");
             four_elements(stack_a, stack_b);
+        }
     }
 }
