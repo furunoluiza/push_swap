@@ -34,6 +34,9 @@ void	free_stack(t_list *stack_a, t_list *stack_b);
 void	print_stack(t_list *stack);
 t_list    *fill_list(int argc, char **argv);
 
+void set_index(int *array, t_list **stack);
+int *fill_array(int argc, char **argv);
+
 /* operations functions */
 void    sort_elements(t_list **stack_a, t_list **stack_b);
 

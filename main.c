@@ -74,6 +74,7 @@ int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
+	int	*array;
 
 	stack_a = NULL;
 	stack_b = NULL;
@@ -84,10 +85,12 @@ int	main(int argc, char **argv)
 			ft_putstr_fd("Error", 1);
 			return (0);
 		}
+		array = fill_array(argc, argv);
 		stack_a = fill_list(argc, argv);
 		printf("Essa é a stack_a\n");
 		print_stack(stack_a);
 		sort_elements(&stack_a, &stack_b);
+		set_index(array, &stack_a);
 		printf("Essa é a stack_a\n");
 		print_stack(stack_a);
 		printf("Essa é a stack_b\n");
