@@ -56,6 +56,6 @@ t_list	*fill_list(int argc, char **argv)
 
 	stack_a = NULL;
 	while (--argc > 0)
-		add_node_top(&stack_a, ft_atol(argv[argc]));
+		add_node_top(&stack_a, ft_atoi(argv[argc]));
 	return (stack_a);
 }
