@@ -44,8 +44,8 @@ void	print_stack(t_list *stack)
 	printf("Começa a printar a stack:\n");
 	while (stack != NULL)
 	{
-		printf("Stack->value: %d\n", stack->value);
-		printf("Stack->index: %d\n", stack->index);
+		printf("Stack->value: %d ", stack->value);
+		printf("Index: %d\n", stack->index);
 		stack = stack->next;
 	}
 }

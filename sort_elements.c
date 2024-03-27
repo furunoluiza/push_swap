@@ -31,10 +31,7 @@ static void    three_elements(t_list **stack_a)
     else if (first < sec && sec > third && first > third) //2 3 1
         reverse_a(stack_a);
     else if (first > sec && sec < third && first > third) //3 1 2
-    {
         rotate_a(stack_a);
-        swap_a(stack_a);
-    }
     else if (first > sec && sec > third && first > third) //3 2 1
     {
         swap_a(stack_a);

@@ -15,25 +15,23 @@
 void set_index(int *array, t_list **stack)
 {
     int i;
-    t_list  *head;
+    t_list  *temp;
 
-    i = 0; 
-    head = *stack;
-    while ((*stack)->next != NULL)
+    i = 0;
+    temp = *stack;
+    while (temp)
     {
-        printf("comparando stack:%d == array:%d\n",(*stack)->value, array[i]);
-        if ((*stack)->value == array[i])
+        printf("comparando stack:%d == array:%d\n",temp->value, array[i]);
+        if (temp->value == array[i])
         {
-            printf("entreeeeeeee!\n");
-            (*stack)->index = i;
-            *stack = head;
-            if ((*stack)->value == array[i])
-                (*stack)->index = i;
-            i++;
+            temp->index = i;
+            temp = temp->next;
+            i = 0;
         }
-        *stack = (*stack)->next;
+        else
+            i++;
     }
-    *stack = head;
+    free(array);
 }
 
 static void    order_array(int argc, int **array)
@@ -44,7 +42,6 @@ static void    order_array(int argc, int **array)
 
     i = 0;
     tmp = 0;
-    printf("order: posição0doarray: %d\n", (*array)[0]);
     while (i < (argc - 1))
     {
         j = i + 1;
@@ -61,7 +58,10 @@ static void    order_array(int argc, int **array)
         }
         i++;
     }
-    printf("order: posição4doarray: %d\n", (*array)[4]);
+    while (i--)
+    {
+        printf("order: posição %d, doarray: %d\n", i, (*array)[i]);
+    }
 }
 
 int *fill_array(int argc, char **argv)
@@ -80,7 +80,6 @@ int *fill_array(int argc, char **argv)
     while (argc > 1)
     {
         array[i] = ft_atoi(argv[j]);
-        printf("valor do arrray:%d index:%d\n",array[i], i);
         i++;
         j++;
         argc--;
