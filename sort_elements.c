@@ -104,7 +104,7 @@ static void five_elements(t_list **stack_a, t_list **stack_b)
     push_a(stack_a, stack_b);
 }
 
-void    sort_elements(t_list **stack_a, t_list **stack_b)
+void    sort_elements(int *array, t_list **stack_a, t_list **stack_b)
 {
     int size;
 
@@ -120,5 +120,7 @@ void    sort_elements(t_list **stack_a, t_list **stack_b)
             four_elements(stack_a, stack_b);
         else if (size == 5)
             five_elements(stack_a, stack_b);
+	else
+		radix(array, stack_a, stack_b);
     }
 }

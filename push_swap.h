@@ -37,8 +37,11 @@ t_list    *fill_list(int argc, char **argv);
 void set_index(int *array, t_list **stack);
 int *fill_array(int argc, char **argv);
 
+void    radix(int *array, t_list **stack_a, t_list **stack_b);
+void	move_elements(t_list **stack_a, t_list **stack_b, int bit);
+
 /* operations functions */
-void    sort_elements(t_list **stack_a, t_list **stack_b);
+void    sort_elements(int *array, t_list **stack_a, t_list **stack_b);
 
 void    ft_swap(t_list **stack);
 void    swap_a(t_list **stack_a);
