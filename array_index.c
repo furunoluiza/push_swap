@@ -84,6 +84,6 @@ int *fill_array(int argc, char **argv)
         j++;
         argc--;
     }
-    order_array(num_argc, &array);
-    return(array);
+    order_array (num_argc, &array);
+    return (array);
 }
