@@ -1,5 +1,5 @@
 NAME = push_swap
-SRC = main.c stack.c swap.c push.c rotate.c reverse.c order.c sort_elements.c array_index.c radix.c
+SRC = main.c stack.c swap.c push.c rotate.c reverse.c order.c sort_elements.c array_index.c radix.c errors.c
 OBJ = $(SRC:.c=.o)
 CC = cc -g
 RM = rm -rf

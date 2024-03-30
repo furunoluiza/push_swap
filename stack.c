@@ -12,7 +12,7 @@
 
 #include "push_swap.h"
 
-void	add_node_top(t_list **stack_top, int argv) //função para add um nó no topo da pilha
+static void	add_node_top(t_list **stack_top, int argv)
 {
 	t_list	*node;
 

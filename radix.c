@@ -1,21 +1,6 @@
 #include "push_swap.h"
 
-void	radix(int *array, t_list **stack_a, t_list **stack_b)
-{
-	int	bit;
-
-	bit = 1;
-	set_index(array, stack_a);
-	while (check_order(*stack_a) == 0)
-	{
-		move_elements(stack_a, stack_b, bit);
-		bit = bit << 1;
-	}
-}
-
-
-
-void	move_elements(t_list **stack_a, t_list **stack_b, int bit)
+static void	move_elements(t_list **stack_a, t_list **stack_b, int bit)
 {
 	int	num_push;
 	int	size;
@@ -37,5 +22,18 @@ void	move_elements(t_list **stack_a, t_list **stack_b, int bit)
 	{
 		push_a(stack_a, stack_b);
 		num_push--;
+	}
+}
+
+void	radix(int *array, t_list **stack_a, t_list **stack_b)
+{
+	int	bit;
+
+	bit = 1;
+	set_index(array, stack_a);
+	while (check_order(*stack_a) == 0)
+	{
+		move_elements(stack_a, stack_b, bit);
+		bit = bit << 1;
 	}
 }

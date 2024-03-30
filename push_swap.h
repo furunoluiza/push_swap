@@ -24,24 +24,20 @@ typedef struct	s_list
 }					t_list;
 
 /* push_swap functions */
-int check_int(char *arg);
 int check_error(int argc, char **argv);
 int repeat_number(int argc, char **argv);
-int	check_order(t_list *stack);
+int *fill_array(int argc, char **argv);
+void    sort_elements(int *array, t_list **stack_a, t_list **stack_b);
 int	stack_size(t_list *stack);
-void    add_node_top(t_list **stack_top, int argv);
+int	check_order(t_list *stack);
+void    radix(int *array, t_list **stack_a, t_list **stack_b);
+void	set_index(int *array, t_list **stack);
 void	free_stack(t_list *stack_a, t_list *stack_b);
 void	print_stack(t_list *stack);
 t_list    *fill_list(int argc, char **argv);
 
-void set_index(int *array, t_list **stack);
-int *fill_array(int argc, char **argv);
 
-void    radix(int *array, t_list **stack_a, t_list **stack_b);
-void	move_elements(t_list **stack_a, t_list **stack_b, int bit);
-
-/* operations functions */
-void    sort_elements(int *array, t_list **stack_a, t_list **stack_b);
+/* moves functions */
 
 void    ft_swap(t_list **stack);
 void    swap_a(t_list **stack_a);
