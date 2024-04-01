@@ -21,7 +21,6 @@ void set_index(int *array, t_list **stack)
     temp = *stack;
     while (temp)
     {
-        printf("comparando stack:%d == array:%d\n",temp->value, array[i]);
         if (temp->value == array[i])
         {
             temp->index = i;
@@ -57,10 +56,6 @@ static void    order_array(int argc, int **array)
             j++;
         }
         i++;
-    }
-    while (i--)
-    {
-        printf("order: posição %d, doarray: %d\n", i, (*array)[i]);
     }
 }
 

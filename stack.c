@@ -39,7 +39,7 @@ void	free_stack(t_list *stack_a, t_list *stack_b)
 	}
 }
 
-void	print_stack(t_list *stack)
+/*void	print_stack(t_list *stack)
 {
 	printf("Começa a printar a stack:\n");
 	while (stack != NULL)
@@ -48,7 +48,7 @@ void	print_stack(t_list *stack)
 		printf("Index: %d\n", stack->index);
 		stack = stack->next;
 	}
-}
+}*/
 
 t_list	*fill_list(int argc, char **argv)
 {

@@ -21,25 +21,23 @@ static void    three_elements(t_list **stack_a)
     first = (*stack_a)->value;
     sec = (*stack_a)->next->value;
     third = (*stack_a)->next->next->value;
-    if (first < sec && sec > third && first < third) //1 3 2
+    if (first < sec && sec > third && first < third)
     {
         swap_a(stack_a);
         rotate_a(stack_a);
     }
-    else if (first > sec && sec < third && first < third) //2 1 3
+    else if (first > sec && sec < third && first < third)
         swap_a(stack_a);
-    else if (first < sec && sec > third && first > third) //2 3 1
+    else if (first < sec && sec > third && first > third)
         reverse_a(stack_a);
-    else if (first > sec && sec < third && first > third) //3 1 2
+    else if (first > sec && sec < third && first > third)
         rotate_a(stack_a);
-    else if (first > sec && sec > third && first > third) //3 2 1
+    else if (first > sec && sec > third && first > third)
     {
         swap_a(stack_a);
         reverse_a(stack_a);
     }
 }
-
-//quando chama a função no mesmo arq coloca static e n precisa colocar no .h
 
 static int smaller_number(t_list **stack_a)
 {
@@ -54,7 +52,6 @@ static int smaller_number(t_list **stack_a)
     }
     return (smaller);
 }
-//Posso mudar essa parte pra retornar a posição do smaller e dps mudar minhas funções
 
 static void four_elements(t_list **stack_a, t_list **stack_b)
 {
@@ -77,7 +74,6 @@ static void four_elements(t_list **stack_a, t_list **stack_b)
     push_a(stack_a, stack_b);
 }
 
-//como vou indexar? função para indexar a stack?
 static void five_elements(t_list **stack_a, t_list **stack_b)
 {
     int smaller;

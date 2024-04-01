@@ -38,7 +38,6 @@ t_list    *fill_list(int argc, char **argv);
 
 
 /* moves functions */
-
 void    ft_swap(t_list **stack);
 void    swap_a(t_list **stack_a);
 void    swap_b(t_list **stack_b);

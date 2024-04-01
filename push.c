@@ -19,9 +19,9 @@ void    ft_push(t_list **stack_a, t_list **stack_b)
     if (*stack_b == NULL)
         return;
     head_b = *stack_b;
-    *stack_b = head_b->next; //remover o elemento do topo da stack_b pop
-    head_b->next = *stack_a; //prox elemento do topo da stack b é o elemento do topo da stack_a
-    *stack_a = head_b; //elemento do topo da stack_a vai ser o elemento que estava no topo da stack_b
+    *stack_b = head_b->next;
+    head_b->next = *stack_a;
+    *stack_a = head_b;
 }
 
 void    push_a(t_list **stack_a, t_list **stack_b)

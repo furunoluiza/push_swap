@@ -19,12 +19,8 @@ int	check_order(t_list *stack)
 		if (stack->value < stack->next->value)
 			stack = stack->next;
 		else
-		{
-			printf("Sem ordem\n");
 			return (0);
-		}
 	}
-	printf("Ordenado\n");
 	return (1);
 }
 
@@ -38,6 +34,5 @@ int	stack_size(t_list *stack)
 		i++;
 		stack = stack->next;
 	}
-	printf("Size:%d\n", i);
 	return (i);
 }

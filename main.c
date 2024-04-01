@@ -30,10 +30,6 @@ int	main(int argc, char **argv)
 		array = fill_array(argc, argv);
 		stack_a = fill_list(argc, argv);
 		sort_elements(array, &stack_a, &stack_b);
-		printf("Essa é a stack_a\n");
-		print_stack(stack_a);
-		printf("Essa é a stack_b\n");
-		print_stack(stack_b);
 		free_stack(stack_a, stack_b);
 	}
 	return (0);
