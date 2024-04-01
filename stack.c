@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/12 14:33:21 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/03/12 17:01:20 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/04/01 18:12:19 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ static void	add_node_top(t_list **stack_top, int argv)
 void	free_stack(t_list *stack_a, t_list *stack_b)
 {
 	t_list	*temp;
+
 	while (stack_a)
 	{
 		temp = stack_a;
@@ -38,17 +39,6 @@ void	free_stack(t_list *stack_a, t_list *stack_b)
 		free(temp);
 	}
 }
-
-/*void	print_stack(t_list *stack)
-{
-	printf("Começa a printar a stack:\n");
-	while (stack != NULL)
-	{
-		printf("Stack->value: %d ", stack->value);
-		printf("Index: %d\n", stack->index);
-		stack = stack->next;
-	}
-}*/
 
 t_list	*fill_list(int argc, char **argv)
 {

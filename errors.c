@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/01 16:43:39 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/04/01 16:43:49 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/04/01 17:50:39 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	check_int(char *arg)
 	int	i;
 
 	i = 0;
-	if (arg[i] == '+' ||arg[i] == '-')
+	if (arg[i] == '+' || arg[i] == '-')
 		i++;
 	while (arg[i] >= '0' && arg[i] <= '9')
 		i++;
@@ -34,10 +34,9 @@ static int	check_long(char *str)
 		return (0);
 }
 
-int repeat_number(int argc, char **argv)
+int	repeat_number(int argc, char **argv)
 {
 	int	i;
-
 	int	j;
 
 	i = 0;
@@ -47,7 +46,7 @@ int repeat_number(int argc, char **argv)
 		i = j + 1;
 		while (i < argc)
 		{
-			if (ft_atol(argv[j]) == ft_atol(argv[i])) 
+			if (ft_atol(argv[j]) == ft_atol(argv[i]))
 				return (1);
 			i++;
 		}
@@ -56,10 +55,10 @@ int repeat_number(int argc, char **argv)
 	return (0);
 }
 
-int check_error(int argc, char **argv)
+int	check_error(int argc, char **argv)
 {
-	int i;
-	
+	int	i;
+
 	i = 1;
 	while (i < argc)
 	{
