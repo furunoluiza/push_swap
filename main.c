@@ -6,7 +6,7 @@
 /*   By: lfuruno- <lfuruno-@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 13:14:47 by lfuruno-          #+#    #+#             */
-/*   Updated: 2024/03/12 17:03:04 by lfuruno-         ###   ########.fr       */
+/*   Updated: 2024/04/02 18:42:00 by lfuruno-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,14 @@ int	main(int argc, char **argv)
 	{
 		if (check_error(argc, argv) || repeat_number(argc, argv))
 		{
-			ft_putstr_fd("Error", 1);
+			ft_putstr_fd("Error\n", 2);
 			return (0);
 		}
 		array = fill_array(argc, argv);
 		stack_a = fill_list(argc, argv);
 		sort_elements(array, &stack_a, &stack_b);
 		free_stack(stack_a, stack_b);
+		free(array);
 	}
 	return (0);
 }

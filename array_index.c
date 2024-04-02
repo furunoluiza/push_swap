@@ -30,7 +30,6 @@ void	set_index(int *array, t_list **stack)
 		else
 			i++;
 	}
-	free(array);
 }
 
 static void	order_array(int argc, int **array)
