@@ -25,11 +25,11 @@ The "push_swap" project revolves around the task of sorting data on a stack usin
 	</thead>
 		<tr>
 			<td align="center">sa</td>
-			<td>swap a - swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.</td>
+			<td>swap a - Swap the first 2 elements at the top of stack a. Do nothing if there is only one or no elements.</td>
 		</tr>
 		<tr>
 			<td align="center">sb</td>
-			<td>swap b - swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.</td>
+			<td>swap b - Swap the first 2 elements at the top of stack b. Do nothing if there is only one or no elements.</td>
 		</tr>
 		<tr>
 			<td align="center">ss</td>
@@ -37,19 +37,19 @@ The "push_swap" project revolves around the task of sorting data on a stack usin
 		</tr>
 		<tr>
 			<td align="center">pa</td>
-			<td>push a - take the first element at the top of b and put it at the top of a. Do nothing if b is empty.</td>
+			<td>push a - Take the first element at the top of b and put it at the top of a. Do nothing if b is empty.</td>
 		</tr>
 		<tr>
 			<td align="center">pb</td>
-			<td>push b - take the first element at the top of a and put it at the top of b. Do nothing if a is empty.</td>
+			<td>push b - Take the first element at the top of a and put it at the top of b. Do nothing if a is empty.</td>
 		</tr>
 		<tr>
 			<td align="center">ra</td>
-			<td>rotate a - shift up all elements of stack a by 1. The first element becomes the last one.</td>
+			<td>rotate a - Shift up all elements of stack a by 1. The first element becomes the last one.</td>
 		</tr>
 		<tr>
 			<td align="center">rb</td>
-			<td>rotate b - shift up all elements of stack b by 1. The first element becomes the last one.</td>
+			<td>rotate b - Shift up all elements of stack b by 1. The first element becomes the last one.</td>
 		</tr>
 		<tr>
 			<td align="center">rr</td>
@@ -57,11 +57,11 @@ The "push_swap" project revolves around the task of sorting data on a stack usin
 		</tr>
 		<tr>
 			<td align="center">rra</td>
-			<td>reverse rotate a - shift down all elements of stack a by 1. The last element becomes the first one.</td>
+			<td>reverse rotate a - Shift down all elements of stack a by 1. The last element becomes the first one.</td>
 		</tr>
 		<tr>
 			<td align="center">rrb</td>
-			<td>reverse rotate b - shift down all elements of stack b by 1. The last element becomes the first one.</td>
+			<td>reverse rotate b - Shift down all elements of stack b by 1. The last element becomes the first one.</td>
 		</tr>
 	</tbody>
 </table>
@@ -71,7 +71,7 @@ The "push_swap" project revolves around the task of sorting data on a stack usin
 1. Install
 
 ```sh
-git clone git@github.com:furunoluiza/minitalk.git
+git clone git@github.com:furunoluiza/push_swap.git
 ```
 
 2. Compilation
@@ -80,16 +80,7 @@ git clone git@github.com:furunoluiza/minitalk.git
 make
 ```
 
-3. Start the server
-
+3. Execute
 ```bash
-./server
+./push_swap [numbers]
 ```
-Copy the Process ID (PID) provided in the output.
-
-4. Send message with client
-
-```bash
-./client [server_pid] ["MESSAGE"]
-```
-Replace [SERVER_PID] with the PID. Replace [MESSAGE] with the data you want to send to the server.
