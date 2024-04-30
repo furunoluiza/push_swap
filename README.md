@@ -18,7 +18,7 @@ The "push_swap" project revolves around the task of sorting data on a stack usin
 		</tr>
 		<tr>
 			<th>op</th>
-			<th>description</th>
+			<th>Description</th>
 		</tr>
 	</thead>
 	<tbody>
