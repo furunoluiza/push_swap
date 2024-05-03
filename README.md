@@ -68,10 +68,10 @@ The "push_swap" project revolves around the task of sorting data on a stack usin
 
 ## How to Use
 
-1. Install
+1. Install and enter the directory
 
 ```sh
-git clone git@github.com:furunoluiza/push_swap.git
+git clone git@github.com:furunoluiza/push_swap.git && cd push_swap
 ```
 
 2. Compilation
